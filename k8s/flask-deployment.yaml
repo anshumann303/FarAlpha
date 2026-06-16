@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: yourdockerhub/flask-app:v1
+          image: flask-app:v1
+          imagePullPolicy: Never
           ports:
             - containerPort: 5000
           env:

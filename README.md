@@ -300,7 +300,57 @@ NAME        REFERENCE             TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
 flask-hpa   Deployment/flask-app  5%/70%    2         5         2          2m
 ```
 
----
+## Deployment Validation Screenshots
+
+### Successful Deployment
+The application was successfully deployed on a live Minikube Kubernetes cluster using the Docker driver.
+
+The following screenshot shows:
+
+- Flask Deployment successfully rolled out
+- Two Flask application replicas running
+- MongoDB StatefulSet pod running
+- All pods healthy with no restarts
+
+![Successful Deployment](https://chatgpt.com/c/screenshots/pods-running.png)
+
+### Services Verification
+The following screenshot verifies Kubernetes Services:
+
+- `flask-service` exposed via NodePort
+- `mongodb-service` exposed internally via ClusterIP
+
+![Services](screenshots/services.png)
+
+### Horizontal Pod Autoscaler
+The following screenshot verifies that the Horizontal Pod Autoscaler was successfully created and configured:
+
+- Minimum replicas: 2
+- Maximum replicas: 5
+- Target CPU utilization: 70%
+
+![HPA](screenshots/hpa.png)
+
+### Persistent Storage Verification
+The following screenshot confirms that the PersistentVolumeClaim was successfully bound to the PersistentVolume and MongoDB persistent storage is available.
+
+![PVC](screenshots/pvc.png)
+
+### Deployment Result Summary
+
+| Component | Status |
+|-----------|--------|
+| Flask Deployment | Running |
+| Flask Pods | 2/2 Running |
+| MongoDB StatefulSet | Running |
+| MongoDB Service | Running |
+| Flask Service | Running |
+| Persistent Volume | Bound |
+| Persistent Volume Claim | Bound |
+| HPA | Configured |
+| Namespace Isolation | Active |
+
+The deployment was successfully validated on a live Minikube cluster.
 
 ## Test the API Endpoints
 
