@@ -312,7 +312,7 @@ The following screenshot shows:
 - MongoDB StatefulSet pod running
 - All pods healthy with no restarts
 
-![Successful Deployment](https://chatgpt.com/c/screenshots/pods-running.png)
+![Successful Deployment]
 
 ### Services Verification
 The following screenshot verifies Kubernetes Services:
@@ -320,7 +320,7 @@ The following screenshot verifies Kubernetes Services:
 - `flask-service` exposed via NodePort
 - `mongodb-service` exposed internally via ClusterIP
 
-![Services](screenshots/services.png)
+![Services](screenshotservice.png)
 
 ### Horizontal Pod Autoscaler
 The following screenshot verifies that the Horizontal Pod Autoscaler was successfully created and configured:
@@ -329,12 +329,12 @@ The following screenshot verifies that the Horizontal Pod Autoscaler was success
 - Maximum replicas: 5
 - Target CPU utilization: 70%
 
-![HPA](screenshots/hpa.png)
+![HPA](screenshotshpa.png)
 
 ### Persistent Storage Verification
 The following screenshot confirms that the PersistentVolumeClaim was successfully bound to the PersistentVolume and MongoDB persistent storage is available.
 
-![PVC](screenshots/pvc.png)
+![PVC](screenshotspvc.png)
 
 ### Deployment Result Summary
 
